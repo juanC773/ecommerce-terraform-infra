@@ -1,8 +1,0 @@
-# Copy this file to terraform.tfvars and fill in your values
-# terraform.tfvars should NOT be committed to git (está en .gitignore)
-
-location           = "eastus"
-kubernetes_version = "1.28"
-node_count         = 2
-node_size          = "Standard_B2s"
-
