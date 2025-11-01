@@ -51,8 +51,11 @@ module "azure_prod_node_pool" {
 }
 
 # Azure AKS Dev/Stage Node Pool - Dedicated nodes for development and staging
+# TEMPORALMENTE DESHABILITADO: Requiere más cores de los disponibles en cuenta estudiante
+# Para habilitarlo: cambiar enable_devstage_pool = true en terraform.tfvars
 module "azure_devstage_node_pool" {
   source = "./modules/aks-node-pool"
+  count  = var.enable_devstage_pool ? 1 : 0
 
   name                  = "devstage"
   kubernetes_cluster_id = module.aks_cluster.id

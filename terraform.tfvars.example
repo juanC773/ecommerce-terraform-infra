@@ -23,6 +23,9 @@ prod_node_pool = {
 
 # Dev/Stage Node Pool Configuration
 # Los pods de dev/stage usarán este pool (via taints)
+# NOTA: Deshabilitado por defecto para cuentas estudiante (requiere 6 cores total)
+# Para habilitarlo, cambia enable_devstage_pool = true (y solicita aumento de quota)
+enable_devstage_pool = false
 devstage_node_pool = {
   vm_size    = "Standard_B2s"  # Mismo tamaño para ahorrar
   node_count = 1                # Mínimo necesario

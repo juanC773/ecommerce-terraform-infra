@@ -65,6 +65,12 @@ variable "devstage_node_pool" {
   }
 }
 
+variable "enable_devstage_pool" {
+  description = "Enable dev/stage node pool. Set to false for student accounts with limited quota"
+  type        = bool
+  default     = false  # Deshabilitado por defecto para cuentas estudiante
+}
+
 variable "common_tags" {
   description = "Common tags to apply to all resources"
   type        = map(string)

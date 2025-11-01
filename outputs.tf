@@ -45,7 +45,7 @@ output "azure_prod_node_pool_id" {
 
 output "azure_devstage_node_pool_id" {
   description = "ID of the Azure dev/stage node pool"
-  value       = module.azure_devstage_node_pool.id
+  value       = var.enable_devstage_pool ? module.azure_devstage_node_pool[0].id : "Not enabled"
 }
 
 # Convenience output for kubectl configuration
